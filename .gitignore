@@ -1,0 +1,6 @@
+node_modules/
+.idea/
+test.html
+yarn.lock
+src/backup.ts
+lib/backup.d.ts

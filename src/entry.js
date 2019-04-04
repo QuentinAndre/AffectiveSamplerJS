@@ -1,0 +1,1 @@
+module.exports = require('./affectivesampler.ts').default;
