@@ -6,6 +6,30 @@ https://codepen.io/QuentinAndre/pen/ROrByr
 
 ## Using AffectiveSamplerJS in Qualtrics
 
+### Word of Caution
+
+Using videos in online experiments can be problematic if the respondents are using outdated browsers or have a slow 
+connection. Before using this task, I recommend that you include this code on the first page of the survey to test 
+that the respondent can see the video/audio:
+
+#### For video content:
+```html
+<video id="video" controls>
+  <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+   If you see this text rather than a video, it means that your browser does not support this task. 
+   Please return the HIT.
+</video>
+```
+
+#### For audio content:
+```html
+<audio id="audio" controls>
+  <source src="https://sample-videos.com/audio/mp3/crowd-cheering.mp3">
+   If you see this text rather than an audio file, it means that your browser does not support this task. 
+   Please return the HIT.
+</audio>
+```
+
 ### Setup
 
 1. Navigate to the "Look and Feel" section of your survey, and click on the "Advanced" tab
@@ -22,7 +46,9 @@ https://codepen.io/QuentinAndre/pen/ROrByr
 ```javascript
 const aff_sampler = new AffectiveSampler({
     parentId: "mysamplingtask",
-    mediaUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", // The media to show.
+    mediaUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", // The media to show. 
+                                        // It should be hosted online (as .mp4 for maximum compatibility).
+                                        // Qualtrics hosting does not work.
     mediaType: "video", // The type of the media, can be "video" or "audio"
     showMediaControls: false, // Whether the show the media controls. If false, only a play/pause button will be displayed.
     sliderMin: -50, // The minimum value of the affective slider
