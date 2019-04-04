@@ -4,9 +4,9 @@ A Javascript library to record people's affective reactions to audio/video seque
 You can preview it on CodePen here:
 https://codepen.io/QuentinAndre/pen/ROrByr
 
-## Using AffectiveSamplerJS in Qualtrics
+## 1. Using AffectiveSamplerJS in Qualtrics
 
-### Word of Caution
+### A. Word of caution
 
 Using videos in online experiments can be problematic if the respondents are using outdated browsers or have a slow 
 connection. Before using this task, I recommend that you include this code on the first page of the survey to test 
@@ -30,7 +30,9 @@ that the respondent can see the video/audio:
 </audio>
 ```
 
-### Setup
+### B. Setting up the library in Qualtrics
+
+Just follow those four steps:
 
 1. Navigate to the "Look and Feel" section of your survey, and click on the "Advanced" tab
 2. Edit the "Header" section, and add the following lines to load the library script:
@@ -62,9 +64,10 @@ const aff_sampler = new AffectiveSampler({
 });
 ```
 
-That's it! You have added a word search task to Qualtrics!
+That's it! You have added an affective sampling task to your Qualtrics survey! To access and store the participants' 
+responses, follow the instructions below.
 
-### Accessing and storing participants' ratings
+### C. Accessing and storing participants' ratings
 
 AffectiveSampler records, at a regular interval, the rating of the media. The ratings are stored in a javascript object, 
 where the key is the timestamp (in seconds) and the value is the rating at this timestamp. If, for instance, the media 
@@ -110,7 +113,7 @@ const aff_sampler = new AffectiveSampler({
 });
 ```
 
-## Version history
+## 2. Version History
 
 ### v0.5.0
 * First release of the library.
