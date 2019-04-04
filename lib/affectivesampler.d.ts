@@ -24,6 +24,7 @@ interface MediaViewerConfig {
     url: string;
     type: string;
     showControls: boolean;
+    canPause: boolean;
 }
 declare class MediaViewer {
     url: string;
@@ -37,6 +38,7 @@ interface AffectiveSamplerConfig {
     mediaType: string;
     mediaUrl: string;
     showMediaControls: boolean;
+    canPauseMedia: boolean;
     sliderMin: number;
     sliderMax: number;
     timeResolution: number;

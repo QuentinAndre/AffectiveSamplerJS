@@ -89,6 +89,7 @@ interface MediaViewerConfig {
     url: string
     type: string
     showControls: boolean
+    canPause: boolean
 }
 
 
@@ -110,11 +111,20 @@ class MediaViewer {
         } else {
             const button = document.createElement("button");
             button.textContent = "Start the Media";
-            button.addEventListener("click", () => {
-                this.media.paused ? this.media.play() : this.media.pause();
-                this.media.paused ? button.textContent = "Unpause the Media" : button.textContent = "Pause the Media";
+            if (o.canPause) {
+                button.addEventListener("click", () => {
+                    this.media.paused ? this.media.play() : this.media.pause();
+                    this.media.paused ? button.textContent = "Unpause the Media" : button.textContent = "Pause the Media";
 
-            });
+                });
+            } else {
+                button.addEventListener("click", () => {
+                    this.media.play();
+                    button.disabled = true;
+                    button.textContent = "Media has started!"
+
+                });
+            }
             this.wrapper.append(button);
         }
     }
@@ -125,6 +135,7 @@ interface AffectiveSamplerConfig {
     mediaType: string
     mediaUrl: string
     showMediaControls: boolean
+    canPauseMedia: boolean
     sliderMin: number
     sliderMax: number
     timeResolution: number
@@ -154,7 +165,8 @@ class AffectiveSampler {
         this.mediaViewer = new MediaViewer({
             url: o.mediaUrl,
             type: o.mediaType,
-            showControls: o.showMediaControls
+            showControls: o.showMediaControls,
+            canPause: o.canPauseMedia
         });
         this.parent.append(this.mediaViewer.wrapper);
         this.ratingSlider = new RatingSlider({

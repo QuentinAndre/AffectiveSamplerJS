@@ -1,6 +1,6 @@
 {
   "name": "AffectiveSamplerJS",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "An effective sampling procedure for psychological research, with easy Qualtrics integration.",
   "main": "index.js",
   "author": "Quentin André",

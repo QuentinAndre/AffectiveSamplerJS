@@ -101,7 +101,8 @@ const aff_sampler = new AffectiveSampler({
     parentId: "mysamplingtask",
     mediaUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", // The media to show.
     mediaType: "video", // The type of the media, can be "video" or "audio"
-    showMediaControls: false, // Whether the show the media controls. If false, only a play/pause button will be displayed.
+    showMediaControls: false, // Whether to show the media controls. If false, only a play/pause button will be displayed.
+    canPauseMedia: true, // Whether the user can pause the video after starting it.
     sliderMin: -50, // The minimum value of the affective slider
     sliderMax: 50, // The maximum value of the affective slider
     timeResolution: 1, // The time resolution (in seconds) at which to sample. Should not be lower than 1.
@@ -114,6 +115,9 @@ const aff_sampler = new AffectiveSampler({
 ```
 
 ## 2. Version History
+
+### v0.6.0
+* Added the `canPauseMedia` option. If set to `false`, the user will not be able to pause the media after starting it.
 
 ### v0.5.0
 * First release of the library.
