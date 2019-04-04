@@ -2,7 +2,7 @@
 A Javascript library to record people's affective reactions to audio/video sequences.
 
 You can preview it on CodePen here:
-
+https://codepen.io/QuentinAndre/pen/ROrByr
 
 ## Using AffectiveSamplerJS in Qualtrics
 
@@ -11,11 +11,11 @@ You can preview it on CodePen here:
 1. Navigate to the "Look and Feel" section of your survey, and click on the "Advanced" tab
 2. Edit the "Header" section, and add the following lines to load the library script:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/QuentinAndre/WordSearchJS/lib/wordsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/QuentinAndre/AffectiveSamplerJS/lib/affectivesampler.min.js"></script>
 ```
 3. Create a "Text" question, and add the following HTML code:
 ```html
-<div id="mysamplingtask"></div>
+<div id="mysamplingtask">&nbsp;</div>
 ```
 
 4. Edit the "Custom JS" of the question, and add the following Javascript code in the `Qualtrics.SurveyEngine.addOnReady` section:
